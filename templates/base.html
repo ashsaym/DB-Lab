@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-info static-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://www.uni-due.de/portal/4/images/UDE-logo-claim.svg" alt="..." height="60" width="200">
+    </a>
+    <div class="collapse navbar-collapse" style="font-size: 25px;">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/User">User</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/DrivingLicence">Driving Licence</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/Rides">Rides</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/Journey">Journey</a>
+        </li>
+           </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/Review">Review</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% block content %}{% endblock %}
+</body>
+</html>
