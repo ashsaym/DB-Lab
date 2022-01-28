@@ -4,7 +4,10 @@ from flask import Flask, render_template, request
 from showSQL import *
 from addSQL import *
 
-app = Flask(__name__)
+app = Flask(__name__,
+            static_url_path='',
+            static_folder='static',
+            template_folder='templates')
 app.secret_key = "any random string"
 
 
@@ -70,10 +73,11 @@ def RidesPage():
 @app.route('/Journey', methods=['GET', 'POST'])
 def Journey():
     Status = None
-    title = "Rides Page | Online Ride Share"
+    title = "Journey Page | Online Ride Share"
     Users = showUser()
     TempRide = showRides()
     TempList = showJourney()
+    print(TempList)
     if flask.request.method == 'GET':
         return render_template('journey.html', title=title, TempList=TempList[0],
                                LenTemp=TempList[1], TempRide=TempRide[0],
@@ -109,6 +113,19 @@ def ReviewPage():
     if flask.request.method == 'GET':
         TempList = showReview()
         return render_template('review_page.html', title=title, TempList=TempList[0],
+                               LenTemp=TempList[1],
+                               Status=Status, Users=Users[0], LenUser=Users[1])
+
+
+@app.route('/JourneyReview', methods=['GET', 'POST'])
+def JourneyReviewPage():
+    Status = None
+    title = "Journey Review Page | Online Ride Share"
+    Users = showUser()
+    if flask.request.method == 'GET':
+        TempList = showJourneyReview()
+        print(TempList)
+        return render_template('journey_review.html', title=title, TempList=TempList[0],
                                LenTemp=TempList[1],
                                Status=Status, Users=Users[0], LenUser=Users[1])
 

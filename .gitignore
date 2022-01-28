@@ -1,0 +1,6 @@
+.Python
+pyvenv.cfg
+.venv
+venv/
+pip-selfcheck.json
+_pycache_/

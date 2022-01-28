@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <h3 class="mt-4">Existing Reviews</h3>
+                <thead>
+                <tr>
+                    <th scope="col">Reviewer</th>
+                    <th scope="col">Journey Date & Time</th>
+                    <th scope="col">From</th>
+                    <th scope="col">To</th>
+                    <th scope="col">Ratting</th>
+                    <th scope="col">Review Date</th>
+                    <th scope="col">Review Text</th>
+                </tr>
+                </thead>
+                <tbody>
+                {%for i in range(0, LenTemp)%}
+                    <tr>
+                        <th scope="row">{{TempList[i]['NAME']}}</th>
+                        <td>{{TempList[i]['FTIME']}}</td>
+                        <td>{{TempList[i]['STARTORT']}}</td>
+                        <td>{{TempList[i]['ZIELORT']}}</td>
+                     <td>{{TempList[i]['RATING']}}</td>
+                     <td>{{TempList[i]['BTIME']}}</td>
+                     <td>{{TempList[i]['TEXTNACHRICHT']}}</td>
+                    </tr>
+                {%endfor%}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

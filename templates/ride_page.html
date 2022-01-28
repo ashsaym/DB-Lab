@@ -18,7 +18,8 @@
     <tr>
       <th scope="row">{{TempList[i]['TID']}}</th>
       <td>{{TempList[i]['NAME']}}</td>
-      <td>{{TempList[i]['ICON']}}</td>
+
+          <td><img src="{{url_for('static', filename=TempList[i]['ICON'])}}" alt="" style="width: 40%"></td>
     </tr>
   {%endfor%}
   </tbody>
