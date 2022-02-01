@@ -73,38 +73,38 @@
         <div class="col-md-12">
             <table class="table">
                   <h3 class="mt-4">Journey Offers</h3>
-  <thead>
-    <tr>
-      <th scope="col">Journey ID</th>
-        <th scope="col">from</th>
-        <th scope="col">To</th>
-        <th scope="col">Date</th>
-        <th scope="col">Max Place</th>
-        <th scope="col">Ride Cost</th>
-        <th scope="col">Status</th>
-        <th scope="col">Provider</th>
-        <th scope="col">Ride Type</th>
-        <th scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-  {%for i in range(0, LenTemp)%}
-    <tr>
-      <th scope="row">{{TempList[i]['FID']}}</th>
-     <th scope="row">{{TempList[i]['STARTORT']}}</th>
-     <th scope="row">{{TempList[i]['ZIELORT']}}</th>
-     <th scope="row">{{TempList[i]['FAHRTDATUMZEIT']}}</th>
-     <th scope="row">{{TempList[i]['MAXPLAETZE']}}</th>
-     <th scope="row">{{TempList[i]['FAHRTKOSTEN']}}</th>
-     <th scope="row">{{TempList[i]['STATUS']}}</th>
-     <th scope="row">{{TempList[i]['BNAME']}}</th>
-     <th scope="row">{{TempList[i]['TNAME']}} <img src="{{url_for('static', filename=TempList[i]['ICON'])}}" alt="" style="width: 20%"></th>
-     <th scope="row">{{TempList[i]['BESCHREIBUNG']}}</th>
+              <thead>
+                <tr>
+                  <th scope="col">Journey ID</th>
+                    <th scope="col">from</th>
+                    <th scope="col">To</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Max Place</th>
+                    <th scope="col">Ride Cost</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Provider</th>
+                    <th scope="col">Ride Type</th>
+                    <th scope="col">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+              {%for i in range(0, LenTemp)%}
+                <tr>
+                  <th scope="row">{{TempList[i]['FID']}}</th>
+                 <th scope="row">{{TempList[i]['STARTORT']}}</th>
+                 <th scope="row">{{TempList[i]['ZIELORT']}}</th>
+                 <th scope="row">{{TempList[i]['FAHRTDATUMZEIT']}}</th>
+                 <th scope="row">{{TempList[i]['MAXPLAETZE']}}</th>
+                 <th scope="row">{{TempList[i]['FAHRTKOSTEN']}}</th>
+                 <th scope="row">{{TempList[i]['STATUS']}}</th>
+                 <th scope="row">{{TempList[i]['BNAME']}}</th>
+                 <th scope="row">{{TempList[i]['TNAME']}} <img src="{{url_for('static', filename=TempList[i]['ICON'])}}" alt="" style="width: 20%"></th>
+                 <th scope="row">{{TempList[i]['BESCHREIBUNG']}}</th>
 
-    </tr>
-  {%endfor%}
-  </tbody>
-</table>
+                </tr>
+              {%endfor%}
+              </tbody>
+            </table>
         </div>
     </div>
 </div>

@@ -3,8 +3,120 @@
 
 <!-- Page Content -->
 <div class="container-fluid">
-  <h1 class="mt-4">Logo Nav by Start Bootstrap</h1>
-  <p>The logo in the navbar is now a default Bootstrap feature in Bootstrap! Make sure to set the height
-    of the logo within the HTML or using CSS. For best results, use an SVG image as your logo.</p>
+  <h1 class="mt-4">Car Share Web Application</h1>
+  <div class="row">
+      <div class="col-md-12">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-6">
+                      <table class="table" style="border: 2px solid">
+                        <h3 class="mt-4">My Reservations</h3>
+                          <thead>
+                            <tr>
+                              <th scope="col">Passenger</th>
+                                <th scope="col">from</th>
+                                <th scope="col">To</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          {%for i in range(0, LenMylist)%}
+                            <tr>
+                              <th scope="row">{{myList[i]['EMAIL']}}</th>
+                             <th scope="row">{{myList[i]['STARTORT']}}</th>
+                             <th scope="row">{{myList[i]['ZIELORT']}}</th>
+                             <th scope="row">{{myList[i]['FTIME']}}</th>
+                             <th scope="row">{{myList[i]['STATUS']}}</th>
+                            </tr>
+                          {%endfor%}
+                          </tbody>
+                        </table>
+                  </div>
+                  <div class="col-md-6">
+                       <table class="table" style="border: 2px solid">
+                        <h3 class="mt-4">Reserved Journey</h3>
+                          <thead>
+                            <tr>
+                              <th scope="col">Passenger</th>
+                                <th scope="col">from</th>
+                                <th scope="col">To</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          {%for i in range(0, LentempList)%}
+                            <tr>
+                              <th scope="row">{{tempList[i]['EMAIL']}}</th>
+                             <th scope="row">{{tempList[i]['STARTORT']}}</th>
+                             <th scope="row">{{tempList[i]['ZIELORT']}}</th>
+                             <th scope="row">{{tempList[i]['FTIME']}}</th>
+                             <th scope="row">{{tempList[i]['STATUS']}}</th>
+                            </tr>
+                          {%endfor%}
+                          </tbody>
+                        </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-12">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-6">
+                      <h3>Open Journey</h3>
+                      <table class="table" style="border: 2px solid">
+                          <thead>
+                            <tr>
+                              <th scope="col">Provider</th>
+                                <th scope="col">from</th>
+                                <th scope="col">To</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          {%for i in range(0, LenOffen)%}
+                            <tr>
+                              <th scope="row">{{OffenJourney[i]['BNAME']}}</th>
+                             <th scope="row">{{OffenJourney[i]['STARTORT']}}</th>
+                             <th scope="row">{{OffenJourney[i]['ZIELORT']}}</th>
+                             <th scope="row">{{OffenJourney[i]['FAHRTDATUMZEIT']}}</th>
+                             <th scope="row">{{OffenJourney[i]['STATUS']}}</th>
+                            </tr>
+                          {%endfor%}
+                          </tbody>
+                        </table>
+                  </div>
+                  <div class="col-md-6">
+                      <h3>Closed Journey</h3>
+                      <table class="table" style="border: 2px solid">
+                          <thead>
+                            <tr>
+                              <th scope="col">Provider</th>
+                                <th scope="col">from</th>
+                                <th scope="col">To</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          {%for i in range(0, LenGeschlossenJourney)%}
+                            <tr>
+                              <th scope="row">{{GeschlossenJourney[i]['BNAME']}}</th>
+                             <th scope="row">{{GeschlossenJourney[i]['STARTORT']}}</th>
+                             <th scope="row">{{GeschlossenJourney[i]['ZIELORT']}}</th>
+                             <th scope="row">{{GeschlossenJourney[i]['FAHRTDATUMZEIT']}}</th>
+                             <th scope="row">{{GeschlossenJourney[i]['STATUS']}}</th>
+                            </tr>
+                          {%endfor%}
+                          </tbody>
+                        </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
 {% endblock %}

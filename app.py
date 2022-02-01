@@ -13,8 +13,17 @@ app.secret_key = "any random string"
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    title = "Online Ride Share"
-    return render_template('index.html', title=title)
+    title = "Home | Online Ride Share"
+    myEmail = 'whitifield@delfi.com'
+    if flask.request.method == 'GET':
+        allReservation = showAllReservation()
+        myListUser = showUserReservation(myEmail)
+        ListOffenJourney = showOffenJourney()
+        ListGeschlossenJourney = showGeschlossenJourney()
+        return render_template('index.html', title=title, tempList=allReservation[0], LentempList=allReservation[1],
+                               myList=myListUser[0], LenMylist=myListUser[1], OffenJourney=ListOffenJourney[0],
+                               LenOffen=ListOffenJourney[1], GeschlossenJourney=ListGeschlossenJourney[0],
+                               LenGeschlossenJourney=ListGeschlossenJourney[1])
 
 
 @app.route('/User', methods=['GET', 'POST'])
@@ -77,7 +86,6 @@ def Journey():
     Users = showUser()
     TempRide = showRides()
     TempList = showJourney()
-    print(TempList)
     if flask.request.method == 'GET':
         return render_template('journey.html', title=title, TempList=TempList[0],
                                LenTemp=TempList[1], TempRide=TempRide[0],

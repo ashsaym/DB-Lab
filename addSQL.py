@@ -3,7 +3,7 @@ import ibm_db
 
 def addNewUser(email, name):
     db = ibm_db.connect(
-        "DATABASE=MYAPP;HOSTNAME=cronus.is.inf.uni-due.de;PORT=50002;PROTOCOL=TCPIP;UID=dbp002;PWD=upehu3ez;", "", "")
+        "DATABASE=SHARER;HOSTNAME=cronus.is.inf.uni-due.de;PORT=50002;PROTOCOL=TCPIP;UID=dbp002;PWD=upehu3ez;", "", "")
     if db:
         inser_sql = "INSERT INTO benutzer (name, email) VALUES(?, ?)"
         stmt = ibm_db.prepare(db, inser_sql)
@@ -18,7 +18,7 @@ def addNewUser(email, name):
 
 def addLicence(fahrer, ablaufdatum):
     db = ibm_db.connect(
-        "DATABASE=MYAPP;HOSTNAME=cronus.is.inf.uni-due.de;PORT=50002;PROTOCOL=TCPIP;UID=dbp002;PWD=upehu3ez;", "", "")
+        "DATABASE=SHARER;HOSTNAME=cronus.is.inf.uni-due.de;PORT=50002;PROTOCOL=TCPIP;UID=dbp002;PWD=upehu3ez;", "", "")
     if db:
         inser_sql = "INSERT INTO fahrerlaubnis (fahrer, ablaufdatum ) VALUES(?, ?)"
         stmt = ibm_db.prepare(db, inser_sql)
@@ -33,7 +33,7 @@ def addLicence(fahrer, ablaufdatum):
 
 def addJourney(startort, zielort, fahrtdatumzeit, maxPlaetze, fahrtkosten, anbieter, transportmittel, beschreibung):
     db = ibm_db.connect(
-        "DATABASE=MYAPP;HOSTNAME=cronus.is.inf.uni-due.de;PORT=50002;PROTOCOL=TCPIP;UID=dbp002;PWD=upehu3ez;", "", "")
+        "DATABASE=SHARER;HOSTNAME=cronus.is.inf.uni-due.de;PORT=50002;PROTOCOL=TCPIP;UID=dbp002;PWD=upehu3ez;", "", "")
     if db:
         inser_sql = "INSERT INTO fahrt (startort, zielort, fahrtdatumzeit, maxPlaetze, fahrtkosten, anbieter, transportmittel, beschreibung) VALUES(?, ?, ?, ?, ?, ?, ?, ?)"
         stmt = ibm_db.prepare(db, inser_sql)
