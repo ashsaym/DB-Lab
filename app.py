@@ -103,8 +103,6 @@ def Journey():
         transportmittel = req.get("transportmittel")
         beschreibung = req.get("beschreibung")
         fahrtdatumzeit = fahrtdatum + '-' + fahrtzeit
-        print(startort, zielort, fahrtdatum, fahrtzeit, maxPlaetze, fahrtkosten, anbieter, transportmittel,
-              beschreibung)
         Status = addJourney(startort, zielort, fahrtdatumzeit, maxPlaetze, fahrtkosten, anbieter, transportmittel,
                             beschreibung)
         return render_template('journey.html', title=title, TempList=TempList[0],
@@ -132,7 +130,6 @@ def JourneyReviewPage():
     Users = showUser()
     if flask.request.method == 'GET':
         TempList = showJourneyReview()
-        print(TempList)
         return render_template('journey_review.html', title=title, TempList=TempList[0],
                                LenTemp=TempList[1],
                                Status=Status, Users=Users[0], LenUser=Users[1])
